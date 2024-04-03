@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 from discord.ext import commands
 import os
 
-load_dotenv("config/.env")
+load_dotenv("config/.env") # load the bot token
 bot_token = os.getenv("BOT_TOKEN")
 
 bot = discord.Bot()
@@ -18,6 +18,6 @@ async def on_ready():
 async def join(ctx):
     channel = ctx.author.voice.channel
     await channel.connect()
-    ctx.voice_client.play(discord.FFmpegPCMAudio("radio/music/cow.mp3"))
+    ctx.voice_client.play(discord.FFmpegPCMAudio("radio/music/cow.mp3")) # use ffmpeg to play audio
 
 bot.run(bot_token)

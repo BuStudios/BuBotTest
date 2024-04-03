@@ -15,7 +15,7 @@ async def on_ready():
     print(f'{bot.user} has connected to Discord!')
 
 @bot.slash_command()
-async def join(ctx):
+async def join(ctx): # ctx means context
     channel = ctx.author.voice.channel
     await channel.connect()
     ctx.voice_client.play(discord.FFmpegPCMAudio("radio/music/cow.mp3")) # use ffmpeg to play audio

@@ -19,5 +19,6 @@ async def join(ctx): # ctx means context
     channel = ctx.author.voice.channel
     await channel.connect()
     ctx.voice_client.play(discord.FFmpegPCMAudio("radio/music/cow.mp3")) # use ffmpeg to play audio
+    # if you don'nt have ffmpeg installed this will not work!
 
 bot.run(bot_token)
